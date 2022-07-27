@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   # post '/posts/:id', to: 'posts#create'
   # put '/posts/:id', to: 'posts#update'
   # put '/posts/:id', to: 'posts#update'
+
+  namespace :api do 
+    resources :posts, defaults: { format: 'json' }
+  end
 end
