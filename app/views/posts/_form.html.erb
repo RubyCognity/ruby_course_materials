@@ -1,0 +1,5 @@
+<%= form_for post do |f| %>
+    <%= f.label :content, class: 'form-label' %>
+    <%= f.text_field :content, style: 'display: block; margin-bottom: 10px;', class: 'form-group' %>
+    <%= f.submit :submit, class: 'btn btn-primary' %>
+<% end %> 
