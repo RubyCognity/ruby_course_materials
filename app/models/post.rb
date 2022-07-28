@@ -3,4 +3,6 @@ class Post < ApplicationRecord
 
     has_many :categories_post
     has_many :categories, through: :categories_post
+
+    validates :content, presence: true
 end
