@@ -13,9 +13,9 @@ class ::Api::PostsController < ActionController::API
         @post = Post.new(post_params)
         result = if @post.save
                     { json: @post, status: :created }
-                else 
+                 else
                     { json: @post.errors.messages, status: :bad_request }
-                end
+                 end
         render result 
     end
 
@@ -26,13 +26,15 @@ class ::Api::PostsController < ActionController::API
                  else
                    { json: @post.errors.messages, status: :bad_request }
                  end
+
         render result
     end
 
     def destroy
         @post = Post.find(params[:id])
         @post.destroy
-        head :ok
+        # head :ok
+        render json: Post.all, status: :ok
     end
 
     private
