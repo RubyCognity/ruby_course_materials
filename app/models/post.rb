@@ -6,4 +6,6 @@ class Post < ApplicationRecord
 
     validates :content, presence: true
     validates :title, presence: true, uniqueness: true
+
+    has_one :tag
 end
