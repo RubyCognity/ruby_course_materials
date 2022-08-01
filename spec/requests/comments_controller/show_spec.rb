@@ -2,11 +2,11 @@ require "rails_helper"
 
 RSpec.describe "CommentsController#show", type:  :request do
   let(:post) { create(:post) }
-  let(:comment) { create(:post, post_id: post.id) }
+  let(:comment) { create(:comment, post_id: post.id) }
 
   before(:each) do 
     comment
-    get api_post_comment(post_id: post.id, id: comment.id)
+    get api_post_comment_path(post_id: post.id, id: comment.id)
   end
 
   it "should return proper JSON response" do 

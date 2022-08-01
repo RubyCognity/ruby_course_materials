@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
+        @post_author = @post.author&.full_name
     end
 
     def new
@@ -42,6 +43,6 @@ class PostsController < ApplicationController
     private
 
     def post_params 
-        params.require(:post).permit(:content, :title)
+        params.require(:post).permit(:content, :title, :author_id)
     end
 end

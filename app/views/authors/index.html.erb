@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Author fullname</th>
+        </tr>
+    </thead>
+     <tbody>
+        <%- @authors.each do |author|%>
+            <tr>
+                <th scope="row"><%= author.id %></th>
+                <td><%= link_to "#{author.first_name} #{author.last_name}", author_path(author) %></td>
+                <br>
+                <hr/>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<br>
+<%= link_to 'Create new author', new_author_path, class: 'btn btn-primary' %> 

@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   # post '/posts/:id', to: 'posts#create'
   # put '/posts/:id', to: 'posts#update'
   # put '/posts/:id', to: 'posts#update'
+  resources :authors, except: [:edit, :update, :delete]
 
   namespace :api do 
     resources :posts, defaults: { format: 'json' }
+    resources :authors, defaults: { format: 'json' }
     resources :posts do 
       resources :comments, only: [:index, :show] #, controller: ''
     end

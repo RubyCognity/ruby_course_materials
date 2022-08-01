@@ -1,5 +1,8 @@
 <%= form_for post do |f| %>
     <%= f.label :content, class: 'form-label' %>
     <%= f.text_field :content, style: 'display: block; margin-bottom: 10px;', class: 'form-group' %>
+    <div class='form-group'>
+        <%= f.select(:author_id,Author.all.map { |e| [e.full_name, e.id] }, class: 'form-control') %>
+    </div>
     <%= f.submit :submit, class: 'btn btn-primary' %>
 <% end %> 
