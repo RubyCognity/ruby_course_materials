@@ -8,4 +8,7 @@ class Post < ApplicationRecord
     validates :title, presence: true, uniqueness: true
 
     has_one :tag
+
+    # scope :title_logner_than_n_characters, -> { where("LENGTH(content) > 10") }
+    scope :title_longer_than_n_characters, ->(n) { where("LENGTH(content) > ?", n) }
 end
