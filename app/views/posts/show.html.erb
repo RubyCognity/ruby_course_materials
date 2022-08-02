@@ -1,5 +1,7 @@
 <strong>Title:</strong>
 <%= @post.content %>
-
+<br/>
+<strong>Author:</strong>
+<%= @post_author || 'N/D'  %>
 <br>
 <%= link_to 'To index', posts_path %> 

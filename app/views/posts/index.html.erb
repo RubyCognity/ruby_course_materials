@@ -22,3 +22,9 @@
 </table>
 <br>
 <%= link_to 'Create new post', new_post_path, class: 'btn btn-primary' %> 
+
+<strong>Tags</strong>
+<% @posts.includes(:tag).each do |post| %> 
+    <%= post.tag.name %>
+    <hr/>
+<% end %>
